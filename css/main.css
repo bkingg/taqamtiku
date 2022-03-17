@@ -392,7 +392,8 @@ fieldset {
 }
 
 input,
-button {
+button,
+.btn {
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -1549,5 +1550,29 @@ footer a:focus {
 		margin: 0 6px;
 	}
 
+}
+
+
+a.btn {
+	display: inline-block;
+	line-height: 40px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border: 1px solid #f8cb37;
+	color: #f8cb37;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+a.btn:hover {
+	opacity: 0.7;
+}
+
+a.btn-lg {
+	font-size: 32px;
+	display: inline-block;
+	line-height: 80px;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
