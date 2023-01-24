@@ -134,6 +134,7 @@ samp {
 	font-size: 1em;
 }
 
+.btn,
 button,
 input,
 optgroup,
@@ -144,15 +145,18 @@ textarea {
 	margin: 0;
 }
 
+.btn,
 button {
 	overflow: visible;
 }
 
+.btn,
 button,
 select {
 	text-transform: none;
 }
 
+.btn,
 button,
 html input[type="button"],
 input[type="reset"],
@@ -161,11 +165,13 @@ input[type="submit"] {
 	cursor: pointer;
 }
 
+.btn,
 button[disabled],
 html input[disabled] {
 	cursor: default;
 }
 
+.btn,
 button::-moz-focus-inner,
 input::-moz-focus-inner {
 	border: 0;
