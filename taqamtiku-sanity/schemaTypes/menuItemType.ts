@@ -30,7 +30,7 @@ export default defineType({
       type: 'reference',
       title: 'Internal Page/Post',
       description: 'Select an internal page or post',
-      to: [{type: 'page'}, {type: 'service'}, {type: 'projet'}, {type: 'article'}],
+      to: [{type: 'page'}, {type: 'service'}, {type: 'article'}],
       hidden: ({parent}) => parent?.linkType !== 'internal',
       validation: (Rule) =>
         Rule.custom((value, {parent}: any) => {

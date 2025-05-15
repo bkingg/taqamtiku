@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Playfair_Display } from "next/font/google";
+import { Josefin_Sans, Playfair_Display } from "next/font/google";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "@/styles/globals.css";
 import "@/styles/custom.scss";
@@ -11,10 +11,10 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 import BackToTop from "@/components/BackToTop";
 import { Suspense } from "react";
 
-const montserrat = Montserrat({
+const josefin_sans = Josefin_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
-  variable: "--font-montserrat",
+  variable: "--font-josefin",
 });
 
 const playfair_display = Playfair_Display({
@@ -25,10 +25,10 @@ const playfair_display = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | FKT Consulting",
-    default: "FKT Consulting",
+    template: "%s | Restaurant Taqamtiku",
+    default: "Restaurant Taqamtiku",
   },
-  description: "FKT Consulting est un cabinet de conseil en actuariat",
+  description: "Restaurant Taqamtiku est un restaurant",
 };
 
 export default async function RootLayout({
@@ -38,7 +38,10 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="fr" className={playfair_display.variable}>
-      <body className={`${montserrat.className}`}>
+      <body
+        className={`${josefin_sans.className}`}
+        style={{ backgroundImage: 'url("/bg.jpg.webp")' }}
+      >
         <Header />
         <main>{children}</main>
         <Footer />

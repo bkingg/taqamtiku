@@ -3,6 +3,12 @@
   padding-top: 80px;
   padding-bottom: 80px;
   color: map.get($theme-colors, "light");
+  text-align: center;
+
+  &__breadcrumb {
+    position: relative;
+    display: inline-flex;
+  }
 
   @include media-breakpoint-up(sm) {
     padding-top: 100px;
@@ -14,6 +20,26 @@
   text-align: center;
   text-transform: uppercase;
   justify-content: center;
+  display: inline-flex;
+  align-items: center;
+
+  background-color: map.get($theme-colors, "primary");
+  margin: auto;
+  padding: 0 30px;
+  height: 50px;
+  border-radius: 5px;
+  &:before {
+    content: "";
+    height: 7px;
+    width: calc(100% - 20px);
+    position: absolute;
+    bottom: -7px;
+    border-radius: 0 0 5px 5px;
+    background-color: #f2f6f7;
+    opacity: 0.15;
+    transition: 0.3s ease-in-out;
+    left: 10px;
+  }
   .breadcrumb-item + .breadcrumb-item::before {
     font-family: "bootstrap-icons";
     font-weight: bold;

@@ -36,7 +36,7 @@ export default async function Header() {
 
   siteSettings.logoUrl = siteSettings?.logo
     ? urlFor(siteSettings.logo).width(300).url()
-    : undefined;
+    : null;
 
   console.log(siteSettings);
 

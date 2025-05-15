@@ -1,7 +1,7 @@
 @use "sass:map";
 
 $theme-colors: (
-  "primary": #145518,
+  "primary": #ffcd01,
   "secondary": #c0a367,
   "success": #22e11c,
   "info": #d9ff50,
@@ -47,8 +47,9 @@ $breadcrumb-divider: "\f285";
 // }
 
 body {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-josefin);
   background-color: #fefffb;
+  font-size: 12px;
 }
 
 h1,
@@ -128,7 +129,7 @@ input {
 }
 
 .btn {
-  font-size: 14px;
+  font-size: 12px;
   border-radius: 8px;
   border-width: 1px;
   border-style: solid;

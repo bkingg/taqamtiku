@@ -85,29 +85,27 @@ export default function Navigation({ siteSettings }: NavigationProps) {
       expand="md"
       className={`header ${isSticky ? "sticky" : ""}`}
     >
-      <Container>
-        <NavbarBrand href="/">
-          <div className="header__logo-wrapper">
-            {siteSettings.logo && (
-              <Image
-                src={siteSettings.logoUrl}
-                fill
-                alt="Hepo Dakar"
-                title="Hepo Dakar"
-                className="img-fluid logo"
-                style={{
-                  objectFit: "contain",
-                  objectPosition: "left",
-                }}
-              />
-            )}
-          </div>
-        </NavbarBrand>
-        <NavbarToggle aria-controls="basic-navbar-nav" />
-        <NavbarCollapse id="basic-navbar-nav">
-          <Nav className="m-auto">{menuShow(menu.items)}</Nav>
-        </NavbarCollapse>
-      </Container>
+      <NavbarBrand href="/">
+        <div className="header__logo-wrapper">
+          {siteSettings.logo && (
+            <Image
+              src={siteSettings.logoUrl}
+              fill
+              alt="Hepo Dakar"
+              title="Hepo Dakar"
+              className="img-fluid logo"
+              style={{
+                objectFit: "contain",
+                objectPosition: "left",
+              }}
+            />
+          )}
+        </div>
+      </NavbarBrand>
+      <NavbarToggle aria-controls="basic-navbar-nav" />
+      <NavbarCollapse id="basic-navbar-nav">
+        <Nav className="m-auto">{menuShow(menu.items)}</Nav>
+      </NavbarCollapse>
     </Navbar>
   );
 }

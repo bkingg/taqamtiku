@@ -67,18 +67,7 @@ export default async function Footer() {
   });
   const footerMenus = siteSettings.footerMenus;
   return (
-    <footer
-      style={{
-        backgroundColor: "rgba(20, 85, 24, 1)",
-        backgroundImage: siteSettings.footerBgImage
-          ? `linear-gradient(to top, rgba(20, 85, 24, 0.7), rgba(20, 85, 24, 1) 95%), url(${urlFor(siteSettings.footerBgImage).width(800).url()})`
-          : "none",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-      className="footer text-light"
-    >
+    <footer className="footer text-light">
       <div className="container">
         <div className="row">
           <div className="col-sm-6 col-md-3">

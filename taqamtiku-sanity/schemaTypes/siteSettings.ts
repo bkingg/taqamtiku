@@ -130,15 +130,6 @@ export default defineType({
       group: 'social',
     }),
     defineField({
-      name: 'footerBgImage',
-      type: 'image',
-      title: 'Arrière Plan du Pied de Page',
-      group: 'footer',
-      options: {
-        hotspot: true,
-      },
-    }),
-    defineField({
       name: 'footerLogo',
       type: 'image',
       title: 'Logo de Pied de Page',
