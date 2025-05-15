@@ -9,7 +9,7 @@ export default defineConfig({
   name: 'default',
   title: 'FKT Consulting',
 
-  projectId: 's4ovdvqq',
+  projectId: 'eakltsyb',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool(), frFRLocale(), tags({})],
