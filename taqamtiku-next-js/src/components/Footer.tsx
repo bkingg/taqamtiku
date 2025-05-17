@@ -146,7 +146,7 @@ export default async function Footer() {
 
       <div className="container">
         <div className="text-center py-5">
-          <p>© 2025 FKT Consulting</p>
+          <p>© 2025 Taqamtiku</p>
           <ul className="list-unstyled d-flex justify-content-center footer__social">
             {siteSettings.twitter && (
               <li>

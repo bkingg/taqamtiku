@@ -78,10 +78,35 @@
   .dropdown-menu {
     background-color: map.get($theme-colors, "primary");
     margin: 0;
-    &.show {
+    border-radius: 5px;
+    &:after {
+      content: "";
+      height: 7px;
+      width: calc(100% - 20px);
+      position: absolute;
+      bottom: -7px;
+      border-radius: 0 0 5px 5px;
+      background-color: #f2f6f7;
+      opacity: 0.15;
+      left: 10px;
+    }
+    &.show,
+    &:hover {
       padding-left: 10px;
+      .nav-link:hover,
+      .nav-link.show {
+        background-color: lighten(map.get($theme-colors, "primary"), 10%);
+      }
       @include media-breakpoint-up(sm) {
         padding-left: 0;
+      }
+    }
+    .nav-link {
+      &:first-child {
+        border-radius: 5px 5px 0 0;
+      }
+      &:last-child {
+        border-radius: 0 0 5px 5px;
       }
     }
   }
@@ -148,8 +173,6 @@
       padding: 0;
       margin: 0;
       background-color: map.get($theme-colors, "primary");
-      border: none;
-      border-top: 4px solid map.get($theme-colors, "primary");
       .nav-link {
         width: 250px;
         white-space: collapse;

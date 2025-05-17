@@ -1,6 +1,6 @@
 .page__header {
   position: relative;
-  padding-top: 80px;
+  padding-top: 100px;
   padding-bottom: 80px;
   color: map.get($theme-colors, "light");
   text-align: center;
@@ -11,7 +11,7 @@
   }
 
   @include media-breakpoint-up(sm) {
-    padding-top: 100px;
+    padding-top: 115px;
     padding-bottom: 100px;
   }
 }
@@ -22,7 +22,7 @@
   justify-content: center;
   display: inline-flex;
   align-items: center;
-
+  margin-top: 20px;
   background-color: map.get($theme-colors, "primary");
   margin: auto;
   padding: 0 30px;
@@ -43,14 +43,14 @@
   .breadcrumb-item + .breadcrumb-item::before {
     font-family: "bootstrap-icons";
     font-weight: bold;
-    color: map.get($theme-colors, "light");
+    color: map.get($theme-colors, "dark");
   }
   .breadcrumb-item {
-    color: map.get($theme-colors, "light");
+    color: map.get($theme-colors, "dark");
     a {
       font-weight: bold;
       text-decoration: none;
-      color: map.get($theme-colors, "light");
+      color: map.get($theme-colors, "dark");
     }
   }
 }

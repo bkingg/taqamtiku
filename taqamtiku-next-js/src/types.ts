@@ -144,3 +144,12 @@ export type Section =
   | LatestArticlesSectionType
   | ServicesSectionType
   | TemoignagesSectionType;
+
+export interface RestaurantMenuItem {
+  _key: string;
+  title: string;
+  image: SanityImageAssetDocument;
+  description: string;
+  price: number;
+  category: string;
+}

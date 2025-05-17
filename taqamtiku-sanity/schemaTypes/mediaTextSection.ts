@@ -89,7 +89,7 @@ export default defineType({
       title: 'Internal Page/Post',
       group: 'text',
       description: 'Select an internal page or post',
-      to: [{type: 'page'}, {type: 'service'}, {type: 'article'}],
+      to: [{type: 'page'}, {type: 'article'}],
       hidden: ({parent}) => !parent?.showCta || parent?.linkType !== 'internal',
     }),
     defineField({

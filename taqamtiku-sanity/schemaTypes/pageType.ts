@@ -44,7 +44,6 @@ export default defineType({
         {type: 'logo_list'},
         {type: 'latest_articles'},
         {type: 'call_to_action'},
-        {type: 'services'},
         {type: 'temoignages'},
         {type: 'video'},
       ],

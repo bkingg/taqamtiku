@@ -1,0 +1,48 @@
+.restaurant-menu {
+  h2 {
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+
+    padding: 4px 0;
+    font-family: monospace; /* optionnel, pour un effet plus régulier */
+
+    li {
+      .restaurant-menu__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: monospace;
+        .item-title {
+          position: relative;
+          padding-right: 10px;
+          flex-grow: 1;
+          &:after {
+            content: "................................................................................";
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            white-space: nowrap;
+            color: #ccc;
+            pointer-events: none;
+            width: 100vw; /* assez large pour remplir l’espace */
+            overflow: hidden;
+            text-overflow: clip;
+            z-index: -1;
+          }
+        }
+
+        .price {
+          min-width: 80px;
+          text-align: right;
+          background: white;
+          padding-left: 10px;
+          position: relative;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@ import {tags} from 'sanity-plugin-tags'
 
 export default defineConfig({
   name: 'default',
-  title: 'FKT Consulting',
+  title: 'Restaurant TAQAMTIKU',
 
   projectId: 'eakltsyb',
   dataset: 'production',

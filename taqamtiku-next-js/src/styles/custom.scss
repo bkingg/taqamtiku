@@ -35,6 +35,7 @@ $breadcrumb-divider: "\f285";
 @import "contact";
 @import "loader";
 @import "forms";
+@import "restaurant-menu";
 @import "temoignages";
 @import "back-to-top";
 
@@ -111,10 +112,15 @@ input {
 }
 
 .section {
+  position: relative;
   padding-top: 40px;
   padding-bottom: 40px;
   margin-bottom: 20px;
   margin-top: 20px;
+  &.section-light {
+    border-radius: 10px;
+    background-color: map.get($theme-colors, "light");
+  }
   &.section-animate {
     opacity: 0;
     transform: translateY(50px);
@@ -125,6 +131,34 @@ input {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+  .section-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  &:before {
+    content: "";
+    height: 10px;
+    width: calc(100% - 30px);
+    position: absolute;
+    z-index: 999;
+    top: -10px;
+    border-radius: 5px 5px 0 0;
+    background-color: #f2f6f7;
+    opacity: 0.2;
+    left: 15px;
+  }
+  &:after {
+    content: "";
+    height: 10px;
+    width: calc(100% - 30px);
+    position: absolute;
+    z-index: 999;
+    bottom: -10px;
+    border-radius: 0 0 5px 5px;
+    background-color: #f2f6f7;
+    opacity: 0.2;
+    left: 15px;
   }
 }
 

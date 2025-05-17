@@ -3,6 +3,7 @@ button.back-to-top {
   bottom: 20px;
   right: 20px;
   background-color: map.get($theme-colors, "primary");
+  color: map.get($theme-colors, "dark");
   font-size: 25px;
   width: 40px;
   height: 40px;
