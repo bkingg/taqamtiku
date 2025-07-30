@@ -1,28 +1,43 @@
 .restaurant-menu {
-  h2 {
+  &__category {
     text-align: center;
+    margin-bottom: 40px;
+    text-transform: none;
+    &:before {
+      content: "";
+      display: block;
+      height: 4px;
+      margin: 0 auto 20px auto;
+      border-radius: 2px;
+      width: 30px;
+      background-color: map.get($theme-colors, "primary");
+    }
   }
   ul {
     list-style: none;
-
     padding: 4px 0;
-    font-family: monospace; /* optionnel, pour un effet plus régulier */
 
     li {
       .restaurant-menu__item {
         display: flex;
+        align-items: baseline;
         justify-content: space-between;
-        align-items: center;
-        font-family: monospace;
+        overflow: hidden;
         .item-title {
           position: relative;
-          padding-right: 10px;
-          flex-grow: 1;
+          font-weight: 900;
+          font-size: 24px;
+          display: inline-block;
+          margin-bottom: 0;
+          padding-right: 5px;
+          text-transform: none;
+          z-index: 1;
           &:after {
-            content: "................................................................................";
+            content: "...........................................................................................................................................................................................................";
             position: absolute;
             left: 100%;
-            top: 50%;
+            top: 70%;
+            font-size: 8px;
             transform: translateY(-50%);
             white-space: nowrap;
             color: #ccc;
@@ -30,17 +45,15 @@
             width: 100vw; /* assez large pour remplir l’espace */
             overflow: hidden;
             text-overflow: clip;
-            z-index: -1;
           }
         }
 
         .price {
-          min-width: 80px;
           text-align: right;
           background: white;
-          padding-left: 10px;
-          position: relative;
-          white-space: nowrap;
+          font-size: 18px;
+          padding-left: 5px;
+          z-index: 1;
         }
       }
     }

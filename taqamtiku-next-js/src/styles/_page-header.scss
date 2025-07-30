@@ -5,6 +5,13 @@
   color: map.get($theme-colors, "light");
   text-align: center;
 
+  .page__title {
+    text-transform: none;
+    font-weight: 900;
+    margin-bottom: 30px;
+    text-shadow: 0 5px 20px rgba(26, 47, 51, 0.95);
+  }
+
   &__breadcrumb {
     position: relative;
     display: inline-flex;

@@ -120,6 +120,30 @@ input {
   &.section-light {
     border-radius: 10px;
     background-color: map.get($theme-colors, "light");
+    &:before {
+      content: "";
+      height: 10px;
+      width: calc(100% - 30px);
+      position: absolute;
+      z-index: 1;
+      top: -10px;
+      border-radius: 5px 5px 0 0;
+      background-color: #f2f6f7;
+      opacity: 0.2;
+      left: 15px;
+    }
+    &:after {
+      content: "";
+      height: 10px;
+      width: calc(100% - 30px);
+      position: absolute;
+      z-index: 1;
+      bottom: -10px;
+      border-radius: 0 0 5px 5px;
+      background-color: #f2f6f7;
+      opacity: 0.2;
+      left: 15px;
+    }
   }
   &.section-animate {
     opacity: 0;
@@ -135,30 +159,6 @@ input {
   .section-content {
     padding-left: 20px;
     padding-right: 20px;
-  }
-  &:before {
-    content: "";
-    height: 10px;
-    width: calc(100% - 30px);
-    position: absolute;
-    z-index: 999;
-    top: -10px;
-    border-radius: 5px 5px 0 0;
-    background-color: #f2f6f7;
-    opacity: 0.2;
-    left: 15px;
-  }
-  &:after {
-    content: "";
-    height: 10px;
-    width: calc(100% - 30px);
-    position: absolute;
-    z-index: 999;
-    bottom: -10px;
-    border-radius: 0 0 5px 5px;
-    background-color: #f2f6f7;
-    opacity: 0.2;
-    left: 15px;
   }
 }
 

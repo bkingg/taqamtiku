@@ -44,12 +44,12 @@ export default async function Pages() {
               .sort((a, b) => a.price - b.price);
             return (
               <div key={category} className="mb-8">
-                <h2>{category}</h2>
+                <h2 className="restaurant-menu__category">{category}</h2>
                 <ul className="row">
                   {categoryItems.map((item) => (
                     <li key={item.title} className="col-sm-6">
                       <div className="restaurant-menu__item">
-                        <span className="item-title">{item.title}</span>
+                        <h3 className="item-title">{item.title}</h3>
                         <Price amount={item.price} />
                       </div>
                       <p className="text-gray-600">{item.description}</p>
