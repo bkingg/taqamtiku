@@ -8,15 +8,13 @@ export default defineType({
     defineField({
       name: 'title',
       type: 'string',
-      readOnly: true,
-      hidden: true,
       initialValue: 'Restaurant Menu',
     }),
     defineField({
-      name: 'items',
+      name: 'categories',
       type: 'array',
-      of: [{type: 'restaurantMenuItem'}],
-      title: 'Plats du menu',
+      of: [{type: 'restaurantMenuCategory'}],
+      title: 'Categories du menu',
     }),
   ],
   initialValue: {

@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   if (req.method === "POST") {
     // Send Email
@@ -20,7 +20,7 @@ export default async function handler(
 
     // Set up email data with unicode symbols
     const mailOptions = {
-      from: `"FKT Consulting" <${process.env.GMAIL_USER}>`, // Sender's address
+      from: `"Restaurant TAQAMTIKU" <${process.env.GMAIL_USER}>`, // Sender's address
       replyTo: email,
       to: process.env.GMAIL_USER, // Receiver's address
       subject: "Formulaire de Contact", // Subject line

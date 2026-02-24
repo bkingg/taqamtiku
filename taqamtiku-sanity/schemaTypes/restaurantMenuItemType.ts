@@ -16,14 +16,25 @@ export default defineType({
     }),
     defineField({name: 'description', type: 'text', title: 'Description'}),
     defineField({name: 'price', type: 'number', title: 'Prix'}),
-    defineField({
-      name: 'category',
-      type: 'string',
-      title: 'Catégorie',
-      options: {
-        list: ['Entrées', 'Plats', 'Desserts', 'Bières', 'Softs', 'Vins', 'Liqueurs'],
-      },
-    }),
+    // defineField({
+    //   name: 'category',
+    //   type: 'string',
+    //   title: 'Catégorie',
+    //   options: {
+    //     list: [
+    //       'Entrées / Tapas',
+    //       'Soupes',
+    //       'Enfants',
+    //       'Plats',
+    //       'Accompagnements',
+    //       'Desserts',
+    //       'Bières',
+    //       'Softs',
+    //       'Vins',
+    //       'Liqueurs',
+    //     ],
+    //   },
+    // }),
   ],
   preview: {
     select: {

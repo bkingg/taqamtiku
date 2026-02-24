@@ -1,6 +1,7 @@
 import menuItemType from './menuItemType'
 import menuType from './menuType'
 import restaurantMenuType from './restaurantMenuType'
+import restaurantMenuCategoryType from './restaurantMenuCategoryType'
 import restaurantMenuItemType from './restaurantMenuItemType'
 import pageType from './pageType'
 import articleType from './articleType'
@@ -23,6 +24,7 @@ export const schemaTypes = [
   menuItemType,
   pageType,
   restaurantMenuType,
+  restaurantMenuCategoryType,
   restaurantMenuItemType,
   articleType,
   videoType,

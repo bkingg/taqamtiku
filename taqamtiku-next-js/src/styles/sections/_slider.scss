@@ -1,17 +1,32 @@
 .section__slider {
+  .carousel-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Always same ratio */
+    overflow: hidden;
+  }
+
   .carousel-image {
     filter: brightness(70%);
+    object-fit: cover; /* important */
   }
   .carousel-caption {
     h3 {
       text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
       color: map.get($theme-colors, "light");
       text-transform: uppercase;
+      font-size: 80px;
     }
 
     p {
       color: map.get($theme-colors, "light");
       display: none;
+    }
+    @include media-breakpoint-up(md) {
+      h3 {
+        font-size: 64px;
+        text-shadow: none;
+      }
     }
 
     @include media-breakpoint-up(sm) {
@@ -42,7 +57,7 @@
         }
       }
       h3 {
-        font-size: 80px;
+        font-size: 48px;
         color: map.get($theme-colors, "light");
         text-shadow: none;
       }

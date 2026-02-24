@@ -1,19 +1,25 @@
 import PageHeader from "@/components/PageHeader";
 import Price from "@/components/Price";
 import { sanityFetch } from "@/sanity/client";
-import { RestaurantMenuItem } from "@/types";
+import { RestaurantMenuCategory, RestaurantMenuItem } from "@/types";
 import { groq, SanityDocument } from "next-sanity";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
 
 const RESTAURANT_MENU_QUERY = groq`*[
   _type == "restaurantMenu"
 ][0]{_id,
-  items[]{
+  categories[]{
+    _key,
     title,
     image,
     description,
-    price,
-    category
+    items[]{
+      _key,
+      title,
+      image,
+      description,
+      price,
+    }
   }
 }`;
 
@@ -21,10 +27,6 @@ export default async function Pages() {
   const restaurantMenu = await sanityFetch<SanityDocument>({
     query: RESTAURANT_MENU_QUERY,
   });
-  const restaurantMenuItems: RestaurantMenuItem[] = restaurantMenu.items || [];
-  const categories: string[] = Array.from(
-    new Set(restaurantMenuItems.map((item) => item.category ?? "Autres"))
-  );
 
   return (
     <>
@@ -38,25 +40,26 @@ export default async function Pages() {
       </PageHeader>
       <div className="section section-light container">
         <div className="section-content restaurant-menu">
-          {categories.map((category) => {
-            const categoryItems = restaurantMenuItems
-              .filter((item) => item.category === category)
-              .sort((a, b) => a.price - b.price);
+          {restaurantMenu.categories.map((category: RestaurantMenuCategory) => {
             return (
-              <div key={category} className="mb-8">
-                <h2 className="restaurant-menu__category">{category}</h2>
-                <ul className="row">
-                  {categoryItems.map((item) => (
-                    <li key={item.title} className="col-sm-6">
-                      <div className="restaurant-menu__item">
-                        <h3 className="item-title">{item.title}</h3>
-                        <Price amount={item.price} />
-                      </div>
-                      <p className="text-gray-600">{item.description}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              category.items.length > 0 && (
+                <div key={category._key} className="mb-8">
+                  <h2 className="restaurant-menu__category">
+                    {category.title}
+                  </h2>
+                  <ul className="row">
+                    {category.items.map((item) => (
+                      <li key={item._key} className="col-sm-6">
+                        <div className="restaurant-menu__item">
+                          <h3 className="item-title">{item.title}</h3>
+                          <Price amount={item.price} />
+                        </div>
+                        <p className="text-gray-600">{item.description}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
             );
           })}
         </div>

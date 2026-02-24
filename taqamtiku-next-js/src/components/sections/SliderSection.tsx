@@ -11,20 +11,26 @@ interface SliderSectionProps {
 export default function SliderSection({ section }: SliderSectionProps) {
   return (
     <section className="section__slider">
-      <Carousel interval={1000}>
+      <Carousel interval={4000} fade>
         {section.slides?.map((slide) => {
           const slideImageUrl = slide.image
-            ? urlFor(slide.image).size(1200, 700).fit("crop").url()
+            ? urlFor(slide.image)
+                .size(1920, 1281)
+                .fit("crop")
+                .crop("center")
+                .url()
             : "";
           return (
             <CarouselItem key={slide._key}>
-              <Image
-                src={slideImageUrl}
-                width={1200}
-                height={500}
-                alt={slide.title}
-                className="d-block w-100 img-fluid carousel-image"
-              />
+              <div className="carousel-image-wrapper">
+                <Image
+                  src={slideImageUrl}
+                  fill
+                  priority
+                  alt={slide.title}
+                  className="carousel-image"
+                />
+              </div>
               {(slide.title || slide.description) && (
                 <CarouselCaption className={slide.captionPosition}>
                   <div

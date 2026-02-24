@@ -103,7 +103,7 @@ export interface SliderSectionType extends BaseSection {
 
 export interface Slide {
   _key: string;
-  image: object;
+  image: SanityImageAssetDocument;
   captionPosition: string;
   title: string;
   description: string;
@@ -133,6 +133,22 @@ export interface VideoSectionType extends BaseSection {
   url: string;
 }
 
+export interface RestaurantMenuCategory {
+  _key: string;
+  title: string;
+  image: SanityImageAssetDocument;
+  description: string;
+  items: RestaurantMenuItem[];
+}
+
+export interface RestaurantMenuItem {
+  _key: string;
+  title: string;
+  image: SanityImageAssetDocument;
+  description: string;
+  price: number;
+}
+
 export type Section =
   | RichTextSectionType
   | VideoSectionType
@@ -144,12 +160,3 @@ export type Section =
   | LatestArticlesSectionType
   | ServicesSectionType
   | TemoignagesSectionType;
-
-export interface RestaurantMenuItem {
-  _key: string;
-  title: string;
-  image: SanityImageAssetDocument;
-  description: string;
-  price: number;
-  category: string;
-}

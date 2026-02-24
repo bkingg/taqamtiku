@@ -8,7 +8,7 @@ $theme-colors: (
   "warning": #ffbe0b,
   "danger": #ff0000,
   "light": #ffffff,
-  "dark": #000103,
+  "dark": #1a2f33,
 );
 
 $sm: 576px;
@@ -163,18 +163,37 @@ input {
 }
 
 .btn {
+  position: relative;
   font-size: 12px;
-  border-radius: 8px;
-  border-width: 1px;
-  border-style: solid;
+  border: none;
   padding: 0 20px;
   line-height: 46px;
-  font-weight: 500;
+  font-weight: 800;
   letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-family: var(--font-josefin);
+  border-radius: 5px;
+  letter-spacing: 2px;
+
+  &:before {
+    content: "";
+    height: 7px;
+    width: calc(100% - 36px);
+    position: absolute;
+    bottom: -7px;
+    border-radius: 0 0 5px 5px;
+    background-color: #f2f6f7;
+    opacity: 0.15;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    left: 18px;
+  }
 }
+
 .btn-primary {
   border-color: map.get($theme-colors, "primary");
-  color: map.get($theme-colors, "light");
+  color: map.get($theme-colors, "dark");
+  box-shadow: 0 3px 5px 0 rgba(26, 47, 51, 0.3);
 }
 
 // * {
