@@ -1,27 +1,10 @@
 import PageHeader from "@/components/PageHeader";
 import Price from "@/components/Price";
 import { sanityFetch } from "@/sanity/client";
-import { RestaurantMenuCategory, RestaurantMenuItem } from "@/types";
-import { groq, SanityDocument } from "next-sanity";
+import { RestaurantMenuCategory } from "@/types";
+import { SanityDocument } from "next-sanity";
 import { Breadcrumb, BreadcrumbItem } from "react-bootstrap";
-
-const RESTAURANT_MENU_QUERY = groq`*[
-  _type == "restaurantMenu"
-][0]{_id,
-  categories[]{
-    _key,
-    title,
-    image,
-    description,
-    items[]{
-      _key,
-      title,
-      image,
-      description,
-      price,
-    }
-  }
-}`;
+import { RESTAURANT_MENU_QUERY } from "@/lib/queries/restaurantMenu";
 
 export default async function Pages() {
   const restaurantMenu = await sanityFetch<SanityDocument>({

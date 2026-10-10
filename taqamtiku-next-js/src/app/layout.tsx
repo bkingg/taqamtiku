@@ -1,15 +1,6 @@
 import type { Metadata } from "next";
 import { Josefin_Sans, Playfair_Display } from "next/font/google";
-import "bootstrap-icons/font/bootstrap-icons.css";
 import "@/styles/globals.css";
-import "@/styles/custom.scss";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import AnimateOnScroll from "@/components/AnimateOnScroll";
-import BackToTop from "@/components/BackToTop";
-import { Suspense } from "react";
 
 const josefin_sans = Josefin_Sans({
   subsets: ["latin"],
@@ -37,18 +28,15 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={playfair_display.variable}>
+    <html
+      lang="fr"
+      className={`${playfair_display.variable} ${josefin_sans.variable}`}
+    >
       <body
         className={`${josefin_sans.className}`}
         style={{ backgroundImage: 'url("/bg.jpg.webp")' }}
       >
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <Suspense>
-          <AnimateOnScroll />
-        </Suspense>
-        <BackToTop />
+        {children}
       </body>
     </html>
   );

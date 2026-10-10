@@ -9,6 +9,13 @@ import textWithLinksBlock from './textWithLinksBlock'
 import videoType from './videoType'
 import siteSettings from './siteSettings'
 
+// Ordering system
+import restaurantTableType from './restaurantTableType'
+import orderLineItemType from './orderLineItemType'
+import orderType from './orderType'
+import staffUserType from './staffUserType'
+import orderCounterType from './orderCounterType'
+
 // Sections
 import latestArticlesSection from './latestArticlesSection'
 import richTextSection from './richTextSection'
@@ -29,6 +36,13 @@ export const schemaTypes = [
   articleType,
   videoType,
   siteSettings,
+
+  // Ordering system
+  restaurantTableType,
+  orderLineItemType,
+  orderType,
+  staffUserType,
+  orderCounterType,
 
   // Sections
   richTextSection,
